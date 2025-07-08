@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  
+</head>
+<body>
+  <div class="all-content">
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand me-auto" href="#"><i class="fa-solid fa-utensils fa-lg" style="color: #f69e34;"></i> Benadir <span style="color: #f69e34;">Bites</span></a>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Benadir Bites</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link mx-lg-2" href="#menu">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mx-lg-2" href="#dtls">Food details</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mx-lg-2" href="ordernow.html">Order Now</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="register.html">Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="#about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="#contact">Contact</a>
+              </li>
+              <li>
+                <button id="toggleDark" class="btn btn-outline-light btn-sm">🌙</button>
+              </li>
+              </ul>
+            </div>
+          </div>
+          <a href="login.html" class="Login-button">Login</a>
+          <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
+      
+      <!--Banner section-->
+      <section id="home">
+       <div class="container">
+        <div class="row">
+          <div class="col-md-12 bnnr">
+            <h1>Always Serving Up Something Delicious</h1>
+            <p>At Benadir Bites, we’re all about serving fresh, flavorful, and fast meals that satisfy every craving. <br> From juicy burgers and crispy fried chicken to golden fries, tasty wraps, and cold drinks,<br> our menu is made to please. Whether you’re grabbing a quick lunch, ordering for the family,<br> or just craving a late-night bite, we prepare every meal with care and deliver it hot and fast.<br> We believe great food should be quick, tasty, and always <br>enjoyable and that’s exactly what we offer at Benadir Bites.</p>
+            <a href="ordernow.html"><button id="btn">Order Now</button></a>
+          </div>
+        </div>
+       </div>
+      </section>
+      <!--menu section-->
+      <section id="menu">
+        <div class="container">
+          <div class="heading2">Menu</div>
+        </div>
+        <div class="container" id="container2">
+          <div class="row">
+            <div class="col-md-3 py-3 py-md-0">
+              <div class="card dish-card">
+                <img src="Myimages/beefburger.jpg" alt="">
+                <div class="card-body">
+                <h3>Classic Beef Burger</h3>
+                <p style="font-size: 9px;"> Juicy beef patty grilled to perfection, topped with cheese, onions, and mayo-ketchup sauce, all inside a soft bun.</p>
+                <p>$5</p><a href="ordernow.html"><button id="btn">Order Now</button></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 py-3 py-md-0"> 
+              <div class="card dish-card">
+                <img src="Myimages/chickenburger.jpg" alt="">
+                <div class="card-body">
+                <h3>Chicken Zinger Burger</h3>
+                <p id="dtls" style="font-size: 10px;"> Crispy fried chicken fillet with cabbage mayo and fresh salad, served in a toasted burger bun.</p>
+                <p>$8</p><a href="ordernow.html"><button id="btn">Order Now</button></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 py-3 py-md-0">
+              <div class="card dish-card">
+                <img src="Myimages/doublecheese.jpg" alt="">
+                <div class="card-body">
+                <h3>Cheese & Double patty Burger</h3>
+                <p id="dtls" style="font-size: 10px;"> Two layers of beef patties, loaded with melted cheese, lettuce, and ketchup, in a fluffy bun.</p>
+                 <p>$13</p>
+                <a href="ordernow.html"><button id="btn">Order Now</button></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 py-3 py-md-0">
+              <div class="card dish-card"  >
+                <img src="Myimages/grilled.jpg" alt="">
+                <div class="card-body">
+                <h3>Grilled Chicken Steak</h3>
+                <p id="dtls" style="font-size: 10px;"> Tender grilled chicken seasoned with special spices, served with salad and garlic sauce.</p>
+                <p>$12</p>
+                <a href="ordernow.html"><button id="btn">Order Now</button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+          <div class="row" style="margin-top: 30px;">
+            <div class="col-md-3 py-3 py-md-0">
+              <div class="card dish-card">
+                <img src="Myimages/crispy.jpg" alt="">
+                <div class="card-body">
+                <h3>Crispy Fried Chicken</h3>
+                <p id="dtls" style="font-size: 10px;"> Deep-fried chicken coated in crispy flour, crunchy outside and juicy inside.</p>
+                <p>$6</p>
+                <a href="ordernow.html"><button id="btn">Order Now</button></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 py-3 py-md-0">
+              <div class="card dish-card">
+                <img src="Myimages/currychicken.jpg" alt="">
+                <div class="card-body">
+                <h3>Chicken Curry With Rice</h3>
+                <p id="dtls" style="font-size: 10px;">Chicken cooked in spicy curry sauce, served with plain white rice.</p>
+                 <p>$8</p>
+                <a href="ordernow.html"><button id="btn">Order Now</button></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 py-3 py-md-0">
+              <div class="card dish-card">
+                <img src="Myimages/chickenshawa.jpg" alt="">
+                <div class="card-body">
+                <h3>Chicken Shawarma</h3>
+                <p id="dtls" style="font-size: 10px;">Thinly sliced marinated chicken wrapped in soft pita bread with garlic sauce, lettuce, and pickles.</p>
+                <p>$10</p>
+                <a href="ordernow.html"><button id="btn">Order Now</button></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 py-3 py-md-0">
+              <div class="card dish-card">
+                <img src="Myimages/beefshawa.jpg" alt="">
+                <div class="card-body">
+                <h3>Beef Shawarma</h3>
+                <p id="dtls" style="font-size: 10px;"> Grilled beef shawarma served on a plate with rice, fries, salad, and tahini sauce.</p>
+                 <p>$7</p>
+                <a href="ordernow.html"><button id="btn">Order Now</button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="row" style="margin-top: 30px;">
+            <div class="col-md-3 py-3 py-md-0">
+              <div class="card dish-card">
+                <img src="Myimages/spicy shawa.jpg" alt="">
+                <div class="card-body">
+                <h3>Spicy Chicken Shawarma</h3>
+                <p id="dtls" style="font-size: 10px;">A box of spicy chicken shawarma chunks, fries, cheese, and jalapeños, topped with hot sauce.</p>
+                 <p>$8</p>
+                <a href="ordernow.html"><button id="btn">Order Now</button></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 py-3 py-md-0">
+              <div class="card dish-card">
+                <img src="Myimages/mango.jpg" alt="">
+                <div class="card-body">
+                <h3>Mango Juice</h3>
+                <p id="dtls" style="font-size: 10px;">Smooth and sweet mango juice, often served chilled. Great with spicy or grilled meals</p>
+                <p>$2.5</p>
+                <a href="ordernow.html"><button id="btn">Order Now</button></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 py-3 py-md-0">
+              <div class="card dish-card">
+                <img src="Myimages/coca.jpg" alt="">
+                <div class="card-body">
+                <h3>Coca-Cola</h3>
+                <p id="dtls" style="font-size: 10px;">Classic fizzy cola drink, sweet and refreshing.
+                </p>
+                <p>$0.5</p>
+                <a href="ordernow.html"><button id="btn">Order Now</button></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 py-3 py-md-0">
+              <div class="card dish-card">
+                <img src="Myimages/chocomilk.jpg" alt="">
+                <div class="card-body">
+                <h3>Chocolate Milkshake</h3>
+                <p id="dtls" style="font-size: 10px;">Creamy and thick milk-based drink, flavored with vanilla or chocolate syrup</p>
+                <p>$3</p>
+                <a href="ordernow.html"><button id="btn">Order Now</button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        
+      </section>
+
+
+
+
+      <!-- About section-->
+       <section id="about">
+        <div class="container">
+          <div class="heading3">About <span>Us</span></div>
+          <div class="row">
+            <div class="col-md-6 text-center">
+              <h3 class="abt"> Taste the Best of Benadir only at <br>Benadir Bites!</h3>
+<p class="abt">
+At <strong>Benadir Bites</strong>, we bring the best flavors of fast food to your table. 
+Our menu features a delicious variety of <strong>burgers</strong>, crispy <strong>chicken</strong>, flavorful <strong>shawarma</strong>, and refreshing <strong>drinks</strong>. 
+We’re passionate about quality, taste, and great service all served in a friendly and welcoming environment. 
+Whether you're grabbing a quick bite or enjoying a meal with friends, Benadir Bites is the perfect spot to satisfy your cravings.
+</p>
+               <a href="ordernow.html"><button id="btn">Order Now</button></a>
+
+            </div>
+            <div class="col-md-6">
+              <div class="card">
+                <img src="Myimages/aboutimg.jpg" alt="">
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+       </section>
+
+
+       <!--sectin contant-->
+       <section id="contact" style="margin-top: 40px;">
+        <div class="container">
+        <div class="row">
+          <div class="col-md-7 ">
+            <div class="heading6">contact <span>Us</span></div>
+            <p>Welcome to a world where flavor meets passion — our burgers are not just food, <br>they’re an experience</p>
+           <form id="contactForm" action="#">
+          <input type="text" name="name" class="form-control mb-2" placeholder="Name"><br>
+          <input type="text" name="phone" class="form-control mb-2" placeholder="Phone"><br>
+          <input type="email" name="email" class="form-control mb-2" placeholder="Email"><br>
+          <button type="submit" id="contact-btn" class="btn btn-danger mt-2">Send Message</button>
+        </form>
+         <div id="success-alert" class="alert alert-success mt-3 d-none" role="alert">
+          Message sent successfully!
+        </div>
+
+          </div>
+          <div class="col-md-5" id="info">
+            <h1>Info</h1>
+            <p> <i class="fa-solid fa-square-envelope fa-lg" style="color: #f69e34;"></i> BenadirBites@gmail.com</p>
+            <p> <i class="fa-solid fa-phone fa-lg" style="color: #f69e34;"></i> +25262777777</p>
+            <P> <i class="fa-solid fa-location-dot fa-lg" style="color: #f69e34;"></i> Hodan, mogadisho</P>
+            <p>Welcome to a world where flavor meets passion — our burgers are not just food, <br>they’re an experience</p>
+
+          </div>
+        </div>
+        </div>
+       </section> 
+
+
+          <!--footer-->
+          <footer id="footer">
+            <h1 class="log">Benadir Bites</h1>
+            <div class="social text-center">
+              <i class="fa-brands fa-twitter"></i>
+              <i class="fa-brands fa-facebook-f"></i>
+              <i class="fa-brands fa-whatsapp"></i>
+              <i class="fa-brands fa-youtube"></i>
+            </div>
+            <div class="copy text-center"> 
+              &copy;CopyRight <strong><span>Benadir Restaurant</span></strong>.All Right reserved
+            </div>
+
+          </footer>
+
+       </div>
+
+
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+      <script >
+    const toggleDark = document.getElementById("toggleDark");
+    toggleDark.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+    });
+    $(document).ready(function () {
+    $.validator.addMethod("lettersOnly", function (value, element) {
+      return this.optional(element) || /^[a-zA-Z\s]+$/.test(value);
+    }, "Name must contain only letters.");
+    $.validator.addMethod("numbersOnly", function (value, element) {
+      return this.optional(element) || /^[0-9]+$/.test(value);
+    }, "Phone must contain only numbers.");
+    $("#contactForm").validate({
+      rules: {
+        name: {
+          required: true,
+          minlength: 2,
+          lettersOnly: true
+        },
+        phone: {
+          required: true,
+          minlength: 10,
+          numbersOnly: true
+        },
+        email: {
+          required: true,
+          email: true
+        }
+      },
+      messages: {
+        name: {
+          required: "Please enter your name.",
+          minlength: "Name must be at least 2 characters.",
+          lettersOnly: "Name must not contain numbers."
+        },
+        phone: {
+          required: "Please enter your phone number.",
+          minlength: "Phone number must be at least 10 digits.",
+          numbersOnly: "Phone must not contain letters."
+        },
+        email: {
+          required: "Please enter your email.",
+          email: "Please enter a valid email address."
+        }
+      },
+      submitHandler: function (form) {
+        $('#success-alert').removeClass('d-none');
+        form.reset();
+        setTimeout(function () {
+          $('#success-alert').addClass('d-none');
+        }, 3000);
+      }
+    });
+  });
+
+
+  
+  </script>
+</body>
+</html>

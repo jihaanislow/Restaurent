@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .register-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        .register-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .register-header i {
+            font-size: 50px;
+            color: #0d6efd;
+            margin-bottom: 15px;
+        }
+        .form-control:focus {
+            border-color: #86b7fe;
+            box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+        }
+        .btn-register {
+            width: 100%;
+            padding: 12px;
+            font-weight: bold;
+        }
+        .error {
+            color: #dc3545;
+            font-size: 0.875em;
+        }
+        .password-requirements {
+            font-size: 0.85rem;
+            color: #6c757d;
+        }
+        .requirement {
+            margin-bottom: 3px;
+        }
+        .requirement i {
+            width: 20px;
+            display: inline-block;
+        }
+        .valid {
+            color: #28a745;
+        }
+        .invalid {
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="register-container">
+            <div class="register-header">
+                <i class="fas fa-user-plus"></i>
+                <h2>Create Your Account</h2>
+                <p class="text-muted">Join our community today</p>
+            </div>
+            <form id="registerForm" method="post">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="firstName" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter first name">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="lastName" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Enter last name">
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address">
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter phone number">
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Create password">
+                        <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="password-requirements mt-2">
+                        <div class="requirement"><i id="lengthIcon" class="fas fa-circle"></i> At least 8 characters</div>
+                        <div class="requirement"><i id="uppercaseIcon" class="fas fa-circle"></i> At least one uppercase letter</div>
+                        <div class="requirement"><i id="lowercaseIcon" class="fas fa-circle"></i> At least one lowercase letter</div>
+                        <div class="requirement"><i id="numberIcon" class="fas fa-circle"></i> At least one number</div>
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password">
+                    </div>
+                </div>
+                
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="terms" name="terms">
+                    <label class="form-check-label" for="terms">I agree to the <a href="#">Terms and Conditions</a></label>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-register">Register</button>
+                
+                <div class="text-center mt-3">
+                    Already have an account? <a href="#">Sign in</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            $('#togglePassword').click(function() {
+                const password = $('#password');
+                const icon = $(this).find('i');
+                if (password.attr('type') === 'password') {
+                    password.attr('type', 'text');
+                    icon.removeClass('fa-eye').addClass('fa-eye-slash');
+                } else {
+                    password.attr('type', 'password');
+                    icon.removeClass('fa-eye-slash').addClass('fa-eye');
+                }
+            });
+
+           
+            $('#password').on('keyup', function() {
+                const password = $(this).val();
+                
+                
+                if (password.length >= 8) {
+                    $('#lengthIcon').removeClass('invalid').addClass('valid').removeClass('fa-circle').addClass('fa-check');
+                } else {
+                    $('#lengthIcon').removeClass('valid').addClass('invalid').removeClass('fa-check').addClass('fa-circle');
+                }
+                if (/[A-Z]/.test(password)) {
+                    $('#uppercaseIcon').removeClass('invalid').addClass('valid').removeClass('fa-circle').addClass('fa-check');
+                } else {
+                    $('#uppercaseIcon').removeClass('valid').addClass('invalid').removeClass('fa-check').addClass('fa-circle');
+                }
+                if (/[a-z]/.test(password)) {
+                    $('#lowercaseIcon').removeClass('invalid').addClass('valid').removeClass('fa-circle').addClass('fa-check');
+                } else {
+                    $('#lowercaseIcon').removeClass('valid').addClass('invalid').removeClass('fa-check').addClass('fa-circle');
+                }
+                
+                
+                if (/[0-9]/.test(password)) {
+                    $('#numberIcon').removeClass('invalid').addClass('valid').removeClass('fa-circle').addClass('fa-check');
+                } else {
+                    $('#numberIcon').removeClass('valid').addClass('invalid').removeClass('fa-check').addClass('fa-circle');
+                }
+            });
+
+            
+            $.validator.addMethod("strongPassword", function(value, element) {
+                return this.optional(element) || 
+                    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/.test(value);
+            }, "Password must contain at least 8 characters including one uppercase, one lowercase letter and one number");
+
+            $.validator.addMethod("validPhone", function(value, element) {
+                return this.optional(element) || 
+                    /^[0-9]{10,15}$/.test(value);
+            }, "Please enter a valid phone number (10-15 digits)");
+
+            
+            $("#registerForm").validate({
+                rules: {
+                    firstName: {
+                        required: true,
+                        minlength: 2,
+                        lettersOnly: true
+                    },
+                    lastName: {
+                        required: true,
+                        minlength: 2,
+                        lettersOnly: true
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    phone: {
+                        required: true,
+                        validPhone: true
+                    },
+                    password: {
+                        required: true,
+                        strongPassword: true
+                    },
+                    confirmPassword: {
+                        required: true,
+                        equalTo: "#password"
+                    },
+                    terms: {
+                        required: true
+                    }
+                },
+                messages: {
+                    firstName: {
+                        required: "Please enter your first name",
+                        minlength: "First name must be at least 2 characters",
+                        lettersOnly: "First name must contain only letters"
+                    },
+                    lastName: {
+                        required: "Please enter your last name",
+                        minlength: "Last name must be at least 2 characters",
+                        lettersOnly: "Last name must contain only letters"
+                    },
+                    email: {
+                        required: "Please enter your email address",
+                        email: "Please enter a valid email address"
+                    },
+                    phone: {
+                        required: "Please enter your phone number"
+                    },
+                    password: {
+                        required: "Please create a password"
+                    },
+                    confirmPassword: {
+                        required: "Please confirm your password",
+                        equalTo: "Passwords do not match"
+                    },
+                    terms: {
+                        required: "You must accept the terms and conditions"
+                    }
+                },
+                errorElement: "div",
+                errorPlacement: function(error, element) {
+                    error.addClass("error mt-1");
+                    
+                    if (element.attr("name") === "terms") {
+                        error.insertAfter(element.parent());
+                    } else {
+                        error.insertAfter(element);
+                    }
+                },
+                submitHandler: function(form) {
+                    alert("Registration successful!\nWe'll redirect you to the login page.");
+                    
+                }
+            });
+            $.validator.addMethod("lettersOnly", function(value, element) {
+                return this.optional(element) || /^[A-Za-z]+$/.test(value);
+            }, "Please enter letters only");
+        });
+    </script>
+</body>
+</html>
